@@ -58,7 +58,7 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
 
         <TouchableOpacity                               // Add New Connection Icon
-          onPress={() => this.props.navigation.navigate('NewConnectionMenu')}
+          //onPress={() => this.props.navigation.navigate('NewConnectionMenu')}
           //onPress={this._onPressAddConnButton}
           >
             <Image 
