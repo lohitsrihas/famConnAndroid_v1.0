@@ -1,2 +1,2 @@
 # famConnAndroid_v1.0
- A family Connection Android Applcation
+ A family Relation Connecting Android Applcation
