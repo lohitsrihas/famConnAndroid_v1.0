@@ -4,6 +4,9 @@ import { TouchableHighlight, TouchableNativeFeedback, TouchableOpacity, Touchabl
   FlatList, Platform, StyleSheet, Text, View, Image, ImageBackground, Button } from 'react-native';
  
 import {horizontalFlatListData} from '../data/horizontalFlatListData.js';
+//import {NavigationContainer} from "@react-navigation/native";
+//import {createStackNavigator} from "@react-navigation/stack";
+//import NewConnectionMenu from './NewConnectionMenu.js';
 
 
 
@@ -27,14 +30,8 @@ class HorizontalFlatListItem extends Component {
 
 
 
-export default class HomeScreen extends Component {
-
-
-
-  _onPressMenuButton = () => {
-    alert("Menu works");
-  }
-  render() {
+function HomeScreen (props) {
+  const { navigation } = props
     
     return (
       <View id='parent' style={styles.parentView}>
@@ -42,7 +39,6 @@ export default class HomeScreen extends Component {
          <View style={styles.menuBar}>  
         
           <TouchableOpacity                              // Menu Icon
-            
             
             onPress={this._onPressMenuButton}
 
@@ -58,8 +54,9 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
 
         <TouchableOpacity                               // Add New Connection Icon
-          //onPress={() => this.props.navigation.navigate('NewConnectionMenu')}
+          //onPress={() => {this._onPressAddConnButton}}
           //onPress={this._onPressAddConnButton}
+          onPress={() => navigation.navigate('AddNewConnection')}
           >
             <Image 
             style={{
@@ -96,8 +93,8 @@ export default class HomeScreen extends Component {
     </View>
     );
   }
-}
 
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   parentView:{
@@ -130,3 +127,4 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
 });
+
